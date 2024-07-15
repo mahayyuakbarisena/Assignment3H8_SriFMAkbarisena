@@ -8,6 +8,18 @@
 
 function sumArray(arr, int) {
     // your code here
+    let angka = 0
+    let sum = 0;
+    let returnArr = [];
+    for (let index = 0; index < arr.length; index++) {
+      for (let index2 = index+1; index2 < arr.length; index2++) {
+        if (arr[index] + arr[index2] === int){
+          returnArr.push([arr[index], arr[index2]]);
+          arr[index] = 'Checked';
+        }
+      }
+    }
+    return returnArr;
 }
 
 // Test Cases

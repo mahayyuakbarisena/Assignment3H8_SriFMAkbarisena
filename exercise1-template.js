@@ -12,6 +12,21 @@
 
 function isArithmeticProgression(numbers) {
     // your code here
+    if (numbers.length > 1){
+      let selisih = numbers[1] - numbers[0]; 
+      let selisihCheck = selisih;
+      let index = 0;
+      while (selisihCheck === selisih && index < numbers.length-1){
+         selisihCheck = numbers[index+1] - numbers[index];
+         if (selisihCheck != selisih) {
+            break;
+         }
+         index++;
+      }
+      return selisih === selisihCheck;
+    } else {
+      return "Invalid Array";
+    }
 }
 
 // Test Cases
@@ -20,3 +35,4 @@ console.log(isArithmeticProgression([2, 4, 6, 12, 24])); // false
 console.log(isArithmeticProgression([2, 4, 6, 8])); // true
 console.log(isArithmeticProgression([2, 6, 18, 54])); // false
 console.log(isArithmeticProgression([1, 2, 3, 4, 7, 9])); // false
+console.log(isArithmeticProgression([])); // Invalid Array

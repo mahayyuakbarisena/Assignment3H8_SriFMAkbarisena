@@ -12,7 +12,19 @@ bacon sand meat akan mengembalikan nilai false
 
 function threeStepsAB(text) {
     // your code here
+    let i = 0;
+    let check = false;
+    while (i < text.length - 3 && check === false) {
+        if (text[i] === 'a'){
+            check = text[i+4] === 'b';
+        } else if (text[i] === 'b'){
+            check = text[i+4] === 'a';
+        }
+        i++;
+    }
+    return check;
 }
+
 
 // Test Cases
 console.log(threeStepsAB("lane borrowed")); // true
